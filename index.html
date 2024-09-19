@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poem Navigation</title>
+    <style>
+      @font-face {
+        font-family: "Arapix";
+        src: url("files/fonts/Arapix.otf") format("opentype");
+      }
+      body {
+        background-color: #1f1f1f;
+        font-family: "Arapix", monospace;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+        flex-direction: column;
+      }
+      button {
+        background-color: #b7b7b7; /* Green */
+        border: none;
+        color: #1f1f1f;
+        width: 300px;
+        height: 75px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 32px;
+        font-family: "Arapix", monospace;
+        margin: 6px 2px;
+        cursor: pointer;
+        border-radius: 15px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #ffffff;
+      }
+      h1 {
+        font-size: 64px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>End Poem</h1>
+    <button onclick="window.location.href='english.html'">English</button>
+    <button onclick="window.location.href='arabic.html'">Arabic</button>
+  </body>
+</html>

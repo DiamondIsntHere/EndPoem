@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "font-name";
+  src: url("fonts/GRAPHIK ARABIC.OTF") format("opentype");
+}
+@font-face {
+  font-family: "font-name-h1";
+  src: url("fonts/GRAPHIK ARABIC MEDIUM.OTF") format("opentype");
+}
+
+body {
+  background-color: #1f1f1f;
+  color: white;
+  font-family: "font-name", monospace;
+  font-size: 20px;
+  text-align: left;
+  direction: ltr;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  animation: animation 0.75s ease-out 0.1s both;
+  overflow-y: scroll;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+@keyframes animation {
+  0% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(-100px) scale(95%);
+  }
+  50% {
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+}
+
+.poem {
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.blue {
+  color: #6fadcc;
+}
+
+.green {
+  color: #71b971;
+}
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  font-family: "font-name-h1";
+  direction: rtl;
+  margin: 20px 0;
+}
+span {
+  filter: blur(4px);
+}
