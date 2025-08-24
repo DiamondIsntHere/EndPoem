@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft End Poem</title>
+    <link rel="icon" href="files/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handjet&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        background-color: rgb(11, 12, 26);
+        font-family: "Handjet", monospace;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 97vh;
+        overflow: hidden;
+        flex-direction: column;
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+      }
+      button {
+        background-color: rgba(183, 183, 183, 0.5);
+        backdrop-filter: blur(4px);
+        border: none;
+        color: #1f1f1f;
+        width: 300px;
+        height: 75px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 32px;
+        font-family: "Rubik", monospace;
+        margin: 6px 2px;
+        cursor: pointer;
+        border-radius: 100px;
+        font-weight: 100;
+        transition: 0.3s;
+      }
+      button:hover {
+        background-color: #f1f1f1;
+        font-weight: 700;
+        border-radius: 15px;
+      }
+      h1 {
+        font-size: 4rem;
+      }
+      .creds {
+        text-align: center;
+        font-family: "Rubik", monospace;
+        color: rgba(183, 183, 183, 0.5);
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          filter: blur(0);
+          transform: translateY(-100px) scale(95%);
+        }
+        50% {
+          opacity: 0;
+          filter: blur(20px);
+          transform: translateY(-100px) scale(95%);
+        }
+        100% {
+          opacity: 1;
+          filter: blur(0px);
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+          filter: blur(0);
+        }
+        to {
+          opacity: 0;
+          filter: blur(20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>End Poem</h1>
+    <button onclick="navigate('english.html')">English</button>
+    <button onclick="navigate('arabic.html')">Arabic</button>
+    <div class="creds"></div>
+    <div class="creds">Website by DiamondIsntHere</div>
+
+    <script>
+      function navigate(url) {
+        document.body.style.animation = "fadeOut 0.75s ease-in forwards";
+        setTimeout(() => {
+          window.location.href = url;
+        }, 750); // match animation duration
+      }
+    </script>
+  </body>
+</html>

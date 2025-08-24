@@ -1,0 +1,179 @@
+/* @font-face {
+  font-family: "font-name";
+  src: url("fonts/") format("truetype");
+}
+@font-face {
+  font-family: "font-name-h1";
+  src: url("fonts/") format("truetype");
+} */
+@import url("https://fonts.googleapis.com/css2?family=Handjet&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --smooth: cubic-bezier(0.77, 0, 0.175, 1);
+  --blue: #6fadcc;
+  --green: #71b971;
+  --text-color: #f1f1f1;
+}
+
+body {
+  font-family: "Rubik", monospace;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    rgb(11, 12, 26),
+    rgb(31, 31, 59),
+    rgb(11, 12, 26)
+  );
+}
+.main {
+  max-width: 600px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.5s var(--smooth);
+  animation: fadeIn 0.75s ease-out 0.1s both;
+}
+.blue-en {
+  color: var(--blue);
+  align-self: flex-start;
+  text-align: left;
+  direction: ltr;
+  transition: 0.5s var(--smooth);
+}
+
+.blue-en:hover,
+.green-en:hover,
+.blue-ar:hover,
+.green-ar:hover {
+  padding: 14px 18px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  transition: 0.2s ease;
+}
+.green-en {
+  color: var(--green);
+  align-self: flex-end;
+  text-align: right;
+  direction: ltr;
+  transition: 0.5s var(--smooth);
+}
+.blue-ar {
+  color: var(--blue);
+  align-self: flex-end;
+  text-align: right;
+  direction: rtl;
+  transition: 0.5s var(--smooth);
+}
+.green-ar {
+  color: var(--green);
+  align-self: flex-start;
+  text-align: right;
+  direction: rtl;
+  transition: 0.5s var(--smooth);
+}
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+  font-family: "Handjet";
+  transition: 0.5s var(--smooth);
+}
+p {
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 16px;
+  max-width: 75%;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  transition: 0.5s var(--smooth);
+}
+.obfuscated {
+  font-family: "Courier Prime", monospace;
+  color: var(--text-color);
+}
+.creds {
+  text-align: center;
+  font-family: "Rubik", monospace;
+  color: rgba(183, 183, 183, 0.5);
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(183, 183, 183, 0.25);
+  backdrop-filter: blur(4px);
+  border: none;
+  color: #f1f1f1;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  font-family: "Material Symbols Rounded";
+  font-size: 24px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1000;
+}
+.back-btn:hover {
+  background-color: rgba(183, 183, 183, 0.75);
+  color: #1f1f1f;
+  font-weight: 700;
+  border-radius: 15px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(0);
+    transform: translateY(-100px) scale(95%);
+  }
+  50% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(-100px) scale(95%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 15px;
+    width: 95%;
+  }
+  p {
+    padding: 10px 14px;
+    max-width: 80%;
+  }
+}
