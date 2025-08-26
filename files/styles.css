@@ -1,24 +1,36 @@
-/* @font-face {
-  font-family: "font-name";
-  src: url("fonts/") format("truetype");
-}
-@font-face {
-  font-family: "font-name-h1";
-  src: url("fonts/") format("truetype");
-} */
 @import url("https://fonts.googleapis.com/css2?family=Handjet&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
-
-* {
-  -webkit-tap-highlight-color: transparent;
-}
 
 :root {
   --smooth: cubic-bezier(0.77, 0, 0.175, 1);
   --blue: #6fadcc;
   --green: #71b971;
   --text-color: #f1f1f1;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+::selection {
+  background-color: rgb(113, 113, 214);
+  color: rgb(218, 218, 235);
+}
+.blue-en::selection {
+  background-color: #6298b4;
+  color: #1f1f1f;
+}
+.green-en::selection {
+  background-color: #63a363;
+  color: #1f1f1f;
+}
+.obfuscated::selection {
+  background-color: var(--text-color);
+  color: #1f1f1f;
+}
+.creds::selection {
+  background-color: #727272;
+  color: #1f1f1f;
 }
 
 body {
@@ -37,6 +49,7 @@ body {
     rgb(11, 12, 26)
   );
 }
+
 .main {
   max-width: 600px;
   padding: 40px;
@@ -44,25 +57,15 @@ body {
   flex-direction: column;
   gap: 10px;
   transition: 0.5s var(--smooth);
-  animation: fadeIn 0.75s ease-out 0.1s both;
+  animation: fadeIn 0.5s ease-out both;
 }
+
 .blue-en {
   color: var(--blue);
   align-self: flex-start;
   text-align: left;
   direction: ltr;
   transition: 0.5s var(--smooth);
-}
-
-.blue-en:hover,
-.green-en:hover,
-.blue-ar:hover,
-.green-ar:hover {
-  padding: 14px 18px;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  transition: 0.2s ease;
 }
 .green-en {
   color: var(--green);
@@ -72,19 +75,23 @@ body {
   transition: 0.5s var(--smooth);
 }
 .blue-ar {
-  color: var(--blue);
   align-self: flex-end;
   text-align: right;
   direction: rtl;
-  transition: 0.5s var(--smooth);
 }
 .green-ar {
-  color: var(--green);
   align-self: flex-start;
-  text-align: right;
   direction: rtl;
-  transition: 0.5s var(--smooth);
 }
+.blue-en:hover,
+.green-en:hover {
+  padding: 14px 18px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  transition: 0.2s ease;
+}
+
 h1 {
   text-align: center;
   font-size: 3rem;
@@ -93,6 +100,7 @@ h1 {
   font-family: "Handjet";
   transition: 0.5s var(--smooth);
 }
+
 p {
   font-size: 1.25rem;
   margin: 0;
@@ -103,14 +111,81 @@ p {
   backdrop-filter: blur(4px);
   transition: 0.5s var(--smooth);
 }
+
 .obfuscated {
   font-family: "Courier Prime", monospace;
   color: var(--text-color);
 }
+
 .creds {
   text-align: center;
-  font-family: "Rubik", monospace;
   color: rgba(183, 183, 183, 0.5);
+}
+
+.quote {
+  position: relative;
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 60px 40px 40px 40px;
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: left;
+  background-color: rgba(31, 31, 59, 0.5);
+  backdrop-filter: blur(4px);
+  color: var(--text-color);
+  border-left: 5px solid rgb(31, 31, 59);
+  border-radius: 24px;
+  transition: 0.2s ease;
+}
+.quote:hover {
+  padding: 60px 42px 42px 42px;
+  border-radius: 28px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.quote::before {
+  content: "❝";
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+.quote::after {
+  content: "❞";
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.author {
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-style: normal;
+  opacity: 0.8;
+}
+
+.quote-ar {
+  text-align: right;
+  border-left: none;
+  border-right: 5px solid rgb(31, 31, 59);
+}
+.quote-ar::before {
+  content: "❞";
+  right: 15px;
+  left: auto;
+}
+.quote-ar::after {
+  content: "❝";
+  left: 15px;
+  right: auto;
+}
+.author-ar {
+  text-align: left;
 }
 
 .back-btn {
@@ -120,7 +195,7 @@ p {
   background-color: rgba(183, 183, 183, 0.25);
   backdrop-filter: blur(4px);
   border: none;
-  color: #f1f1f1;
+  color: var(--text-color);
   width: 45px;
   height: 45px;
   padding: 0;
@@ -130,12 +205,26 @@ p {
   cursor: pointer;
   transition: 0.3s;
   z-index: 1000;
+  user-select: none;
+  animation: slideInTop 0.5s var(--smooth) 0.5s forwards;
+  opacity: 0;
 }
 .back-btn:hover {
   background-color: rgba(183, 183, 183, 0.75);
   color: #1f1f1f;
   font-weight: 700;
   border-radius: 15px;
+}
+
+@keyframes slideInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
@@ -175,5 +264,17 @@ p {
   p {
     padding: 10px 14px;
     max-width: 80%;
+  }
+  .quote {
+    max-width: 90%;
+    padding: 40px 25px 25px 25px;
+    border-radius: 20px;
+  }
+  .quote:hover {
+    padding: 40px 25px 25px 25px;
+    border-radius: 24px;
+  }
+  .author {
+    margin-top: 15px;
   }
 }
