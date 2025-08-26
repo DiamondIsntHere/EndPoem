@@ -17,6 +17,10 @@
       * {
         -webkit-tap-highlight-color: transparent;
       }
+      ::selection {
+        background-color: rgb(113, 113, 214);
+        color: rgb(218, 218, 235);
+      }
       body {
         background-color: rgb(11, 12, 26);
         font-family: "Handjet", monospace;
@@ -28,7 +32,7 @@
         overflow: hidden;
         flex-direction: column;
         opacity: 0;
-        animation: fadeIn 1s ease-out forwards;
+        animation: fadeIn 0.75s ease-out forwards;
       }
       button {
         background-color: rgba(183, 183, 183, 0.5);
@@ -101,10 +105,10 @@
 
     <script>
       function navigate(url) {
-        document.body.style.animation = "fadeOut 0.75s ease-in forwards";
+        document.body.style.animation = "fadeOut 0.5s ease-in forwards";
         setTimeout(() => {
           window.location.href = url;
-        }, 750); // match animation duration
+        }, 500);
       }
     </script>
   </body>
