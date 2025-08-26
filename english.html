@@ -168,7 +168,7 @@
         that into a third.
       </p>
       <p class="blue-en">
-        Sometimes the player dreamed it watched words on a screen
+        Sometimes the player dreamed it watched words on a screen.
       </p>
       <p class="green-en">Let's go back.</p>
       <p class="green-en">
@@ -279,6 +279,13 @@
       <p class="green-en">Wake up.</p>
       <div class="creds"></div>
       <div class="creds">End Poem by Julian Gough</div>
+      <div class="quote">
+        Twenty years from now you will be more disappointed by the things that
+        you didn't do than by the ones you did do. So throw off the bowlines.
+        Sail away from the safe harbor. Catch the trade winds in your sails.
+        Explore. Dream. Discover.
+        <span class="author">- Unknown</span>
+      </div>
     </div>
 
     <script>
@@ -299,15 +306,14 @@
         });
       }
 
-      // Update obfuscated text every 150ms to mimic the END poem
-      setInterval(updateObfuscated, 100);
+      setInterval(updateObfuscated, 90);
     </script>
     <script>
       function navigate(url) {
-        document.body.style.animation = "fadeOut 0.75s ease-in forwards";
+        document.body.style.animation = "fadeOut 0.5s ease-in forwards";
         setTimeout(() => {
           window.location.href = url;
-        }, 750);
+        }, 500);
       }
     </script>
   </body>
